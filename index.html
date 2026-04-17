@@ -26,39 +26,41 @@ body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
 
 /* SCROLL PASARAN */
 .scroll-box{height:420px;overflow:hidden;position:relative}
-.scroll-inner{position:absolute;width:100%;animation:scrollUp 15s linear infinite}
+.scroll-inner{position:absolute;top:0;left:0;width:100%;animation:scrollUp 15s linear infinite}
 @keyframes scrollUp{0%{top:0}100%{top:-50%}}
 
 .cell{
-border:1px solid #d80b2e;
-padding:12px;
-text-align:center;
+  border:1px solid #d80b2e;
+  padding:12px;
+  text-align:center;
 }
 
 .num{
-background:#0d0631;
-padding:4px 10px;
-border-radius:8px;
-margin-left:6px;
+  background:#0d0631;
+  padding:4px 10px;
+  border-radius:8px;
+  margin-left:6px;
 }
 
 /* PANEL KANAN */
 .panel{
-border:1px solid #14c6d1;
-padding:12px;
-margin-bottom:10px;
-border-radius:10px;
+  border:1px solid #14c6d1;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:10px;
 }
 
 /* BANNER BESAR */
 .big-banner{
-height:260px;
-background:#111;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:10px;
-font-weight:bold;
+  height:260px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  font-weight:bold;
+  text-align:center;
+  padding:10px;
 }
 </style>
 </head>
@@ -67,58 +69,88 @@ font-weight:bold;
 
 <div class="wrap">
 
-<div class="top">
-<h1>LANAYA88</h1>
-<div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
-</div>
+  <div class="top">
+    <h1>LANAYA88</h1>
+    <div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
+  </div>
 
-<div class="banner-row">
-<div class="banner">IKLAN / BANNER</div>
-<div class="banner">BANNER / BANNER</div>
-</div>
+  <div class="banner-row">
+    <div class="banner">IKLAN / BANNER</div>
+    <div class="banner">BANNER / BANNER</div>
+  </div>
 
-<div class="ticker">
-<span>TIAP HARI UPDATE DATA OTOMATIS, ANGKA BERJALAN PELAN</span>
-</div>
+  <div class="ticker">
+    <span>TIAP HARI UPDATE DATA OTOMATIS, ANGKA BERJALAN PELAN</span>
+  </div>
 
-<div class="main">
+  <div class="main">
 
-<!-- KIRI -->
-<div class="left">
-<div class="scroll-box">
-<div class="scroll-inner" id="dataList"></div>
-</div>
-</div>
+    <!-- KIRI -->
+    <div class="left">
+      <div class="scroll-box">
+        <div class="scroll-inner" id="dataList"></div>
+      </div>
+    </div>
 
-<!-- KANAN -->
-<div class="right">
+    <!-- KANAN -->
+    <div class="right">
 
-<div class="panel">
-<b>RESULT PUTARAN</b><br><br>
-HARI INI<br>
-<b id="tgl"></b><br><br>
-UPDATE<br>
-<b id="jam"></b>
-</div>
+      <div class="panel">
+        <b>RESULT PUTARAN</b><br><br>
+        HARI INI<br>
+        <b id="tgl"></b><br><br>
+        UPDATE<br>
+        <b id="jam"></b>
+      </div>
 
-<div class="panel">
-<b>BANNER ATAS</b><br><br>
-BANNER 1 : 01<br>
-BANNER 2 : 02
-</div>
+      <div class="panel">
+        <b>BANNER ATAS</b><br><br>
+        BANNER 1 : 01<br>
+        BANNER 2 : 02
+      </div>
 
-<!-- INI UNTUK GIF / VIDEO -->
-<div class="big-banner">
-MASUKKAN GIF / VIDEO DI SINI
-</div>
+      <div class="big-banner">
+        MASUKKAN GIF / VIDEO DI SINI
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
 <script>
 const list = [
   {nama:"MOROCCO QUATRO 03:00 WIB", angka:"5432"},
+  {nama:"MOROCCO QUATRO 00:01 WIB", angka:"5643"},
+  {nama:"MOROCCO QUATRO 21:00 WIB", angka:"5567"},
+  {nama:"MOROCCO QUATRO 18:00 WIB", angka:"7812"},
+  {nama:"BHURMA", angka:"3346"},
+  {nama:"RWANDA LOTTO", angka:"6654"},
+  {nama:"CANADA", angka:"7785"},
+  {nama:"SHANGHAI POOLS 11:00", angka:"1298"},
+  {nama:"SHANGHAI POOLS 15:00", angka:"4421"},
+  {nama:"SHANGHAI POOLS 23:00", angka:"6399"},
+  {nama:"TOTOMACAU 13:00 WIB", angka:"8831"},
+  {nama:"TOTOMACAU 16:00 WIB", angka:"8812"},
+  {nama:"TOTOMACAU 19:00 WIB", angka:"4567"},
+  {nama:"TOTOMACAU 22:00 WIB", angka:"5678"},
+  {nama:"TOTOMACAU 23:00 WIB", angka:"4457"},
+  {nama:"TOTOMACAU 00:00 WIB", angka:"6401"},
+  {nama:"ANKARAPOOLS", angka:"7012"},
+  {nama:"MANCITYPOOLS", angka:"2291"},
+  {nama:"WISCOSIN", angka:"1678"},
+  {nama:"BARCELONA", angka:"4412"},
+  {nama:"JAKARTA POOLS", angka:"7785"},
+  {nama:"OSLO", angka:"1298"},
+  {nama:"TOKYO", angka:"4421"},
+  {nama:"GRAB POOLS", angka:"6399"},
+  {nama:"BATAVIA", angka:"8831"},
+  {nama:"MONGOLIA", angka:"8812"},
+  {nama:"GRAND DRAGON 4D", angka:"4567"},
+  {nama:"EMIRATES DAY", angka:"5678"},
+  {nama:"NINE LOTTO", angka:"4457"},
+  {nama:"GOOD 4D", angka:"6401"},
+  {nama:"MACAU 5D", angka:"7012"},
+ {nama:"MOROCCO QUATRO 03:00 WIB", angka:"5432"},
   {nama:"MOROCCO QUATRO 00:01 WIB", angka:"5643"},
   {nama:"MOROCCO QUATRO 21:00 WIB", angka:"5567"},
   {nama:"MOROCCO QUATRO 18:00 WIB", angka:"7812"},
@@ -194,9 +226,9 @@ const list = [
   {nama:"NORTH CAROLINA EVENING", angka:"4457"},
   {nama:"NORTH CAROLINA", angka:"6401"},
   {nama:"USA NIGHT", angka:"7012"},
-  {nama:"SANTAFE LOTTERY, angka:"2291"},
-  {nama:"GERMANY PLUS5, angka:"1678"},
-  {nama:"PATTAYA LOTTERY", angka:"8796"}
+  {nama:"SANTAFE LOTTERY", angka:"2291"},
+  {nama:"GERMANY PLUS5", angka:"1678"},
+  {nama:"PATTAYA LOTTERY", angka:"8796"},
   {nama:"BRAZIL", angka:"7785"},
   {nama:"CHIANGMAI LOTTERY", angka:"1408"},
   {nama:"WINCHESTER LOTTERY", angka:"4421"},
@@ -210,16 +242,16 @@ const list = [
   {nama:"HUAHIN 01:00", angka:"4499"},
   {nama:"BHURMA", angka:"6623"},
   {nama:"CHELSEA POOLS", angka:"6090"},
-  {nama:"HUAHIN 01:00", angka:"3276"},
+  {nama:"HUAHIN 01:00", angka:"3276"}
 ];
 
 const data = document.getElementById('dataList');
 
 function render(){
-  let html="";
-  list.forEach(item=>{
-    html += `<div class='cell'>
-      ${item.nama} <span class='num'>${item.angka}</span>
+  let html = "";
+  list.forEach(item => {
+    html += `<div class="cell">
+      ${item.nama} <span class="num">${item.angka}</span>
     </div>`;
   });
 
@@ -230,10 +262,10 @@ function render(){
 render();
 
 function updateTime(){
-  let now=new Date();
-  document.getElementById('tgl').innerText=
+  let now = new Date();
+  document.getElementById('tgl').innerText =
     now.toLocaleDateString('id-ID',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
-  document.getElementById('jam').innerText=
+  document.getElementById('jam').innerText =
     now.toLocaleTimeString('id-ID');
 }
 
