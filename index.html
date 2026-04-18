@@ -281,6 +281,25 @@ function render(){
   data.innerHTML = html;
 }
 
+render();
+
+// AUTO SCROLL
+let scrollPos = 0;
+
+setInterval(() => {
+  const box = document.querySelector('.scroll-box');
+  if (!box) return;
+
+  scrollPos += 1;
+
+  if(scrollPos >= box.scrollHeight / 2){
+    scrollPos = 0;
+  }
+
+  box.scrollTop = scrollPos;
+}, 30);
+
+
 // JAM + TANGGAL
 function updateWaktu() {
     const now = new Date();
@@ -297,7 +316,7 @@ function updateWaktu() {
  const bulan =["JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
  
 
-let tgl = hari[now.getDay()] + " " + now.getDate() + " " + bulan[now.getMonth()] + " " + now.getFullYear();
+let tgl = hari[now.getDay()] + " SABTU" + now.getDate() + " 18" + bulan[now.getMonth()] + "APRIL " + now.getFullYear(2026);
 
   document.getElementById("tanggal").innerHTML = tgl;
 }
