@@ -1,3 +1,4 @@
+                       
 <!doctype html>
 <html lang="id">
 <head>
@@ -6,7 +7,181 @@
 <title>LANAYA88</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
+body{margin:0;font-family:Arial;background:#062b40;color:#fff}
+.wrap{max-width:1200px;margin:auto}
+
+/* HEADER */
+.top{background:#d8dce0;color:#000;text-align:center;padding:15px}
+.banner-row{display:flex}
+.banner{flex:1;height:60px;background:#9aa3aa;display:flex;align-items:center;justify-content:center;font-weight:bold}
+
+/* TEXT JALAN */
+.ticker{background:#f4bf62;padding:8px;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-left:100%;animation:marq 10s linear infinite}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* LAYOUT */
+.main{display:flex}
+.left{flex:2}
+.right{flex:1;padding:10px}
+
+/* SCROLL PASARAN */
+.scroll-box{height:420px;overflow:hidden;position:relative}
+.scroll-inner{position:absolute;width:100%;animation:scrollUp 10s linear infinite}
+@keyframes scrollUp{0%{top:0}100%{top:-50%}}
+
+.cell{
+border:1px solid #14c6d1;
+padding:12px;
+text-align:center;
+}
+
+.num{
+background:#0a3c4f;
+padding:4px 10px;
+border-radius:8px;
+margin-left:6px;
+}
+
+/* PANEL KANAN */
+.panel{
+border:1px solid #14c6d1;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+}
+
+/* BANNER BESAR */
+.big-banner{
+height:260px;
+background:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<div class="top">
+<h1>LANAYA88</h1>
+<div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
+</div>
+
+<div class="banner-row">
+<div class="banner">IKLAN / BANNER</div>
+<div class="banner">BANNER / BANNER</div>
+</div>
+
+<div class="ticker">
+<span>TIAP HARI UPDATE DATA OTOMATIS, ANGKA BERJALAN PELAN</span>
+</div>
+
+<div class="main">
+
+<!-- KIRI -->
+<div class="left">
+<div class="scroll-box">
+<div class="scroll-inner" id="dataList"></div>
+</div>
+</div>
+
+<!-- KANAN -->
+<div class="right">
+
+<div class="panel">
+<b>RESULT PUTARAN</b><br><br>
+HARI INI<br>
+<b id="tgl"></b><br><br>
+UPDATE<br>
+<b id="jam"></b>
+</div>
+
+<div class="panel">
+<b>BANNER ATAS</b><br><br>
+BANNER 1 : 01<br>
+BANNER 2 : 02
+</div>
+
+<!-- INI UNTUK GIF / VIDEO -->
+<div class="big-banner">
+MASUKKAN GIF / VIDEO DI SINI
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+const list = [
+  {nama:"DARWIN 4D", angka:"5432"},
+  {nama:"GERMANY PLUS", angka:"5643"},
+  {nama:"MALIBU 4D", angka:"5567"},
+  {nama:"LIVERPOOL LOTTERY", angka:"7812"},
+  {nama:"BULLS EYE", angka:"3346"},
+  {nama:"CANADA", angka:"6654"},
+  {nama:"BRAZIL", angka:"7785"},
+  {nama:"MALIBU CITY POOLS", angka:"1298"},
+  {nama:"WINCHESTER LOTTERY", angka:"4421"},
+  {nama:"PARIS LOTTERY", angka:"6399"},
+  {nama:"MONGOLIA", angka:"8831"},
+  {nama:"ANKARA POOLS", angka:"8812"},
+  {nama:"PATTAYA LOTTERY", angka:"4567"},
+  {nama:"HOKI DRAW", angka:"5678"},
+  {nama:"BARCELONA", angka:"4457"},
+  {nama:"MANILA POOLS", angka:"6401"},
+  {nama:"ORLANDO", angka:"7012"},
+  {nama:"TOREGON 13:00", angka:"2291"},
+  {nama:"TEXAS DAY", angka:"1678"},
+  {nama:"TEXAS EVENING", angka:"4412"}
+];
+
+const data = document.getElementById('dataList');
+
+function render(){
+  let html="";
+  list.forEach(item=>{
+    html += `<div class='cell'>
+      ${item.nama} <span class='num'>${item.angka}</span>
+    </div>`;
+  });
+
+  html += html; // biar scroll nyambung
+  data.innerHTML = html;
+}
+
+render();
+
+function updateTime(){
+  let now=new Date();
+  document.getElementById('tgl').innerText=
+    now.toLocaleDateString('id-ID',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+  document.getElementById('jam').innerText=
+    now.toLocaleTimeString('id-ID');
+}
+
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>
+--------------------------------------------------------------
+
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LANAYA88</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#d80b2e;color:#fff}
 .wrap{max-width:1200px;margin:auto}
 
 /* HEADER */
@@ -26,41 +201,39 @@ body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
 
 /* SCROLL PASARAN */
 .scroll-box{height:420px;overflow:hidden;position:relative}
-.scroll-inner{position:absolute;top:0;left:0;width:100%;animation:scrollUp 15s linear infinite}
+.scroll-inner{position:absolute;width:100%;animation:scrollUp 15s linear infinite}
 @keyframes scrollUp{0%{top:0}100%{top:-50%}}
 
 .cell{
-  border:1px solid #d80b2e;
-  padding:12px;
-  text-align:center;
+border:1px solid #d80b2e;
+padding:12px;
+text-align:center;
 }
 
 .num{
-  background:#0d0631;
-  padding:4px 10px;
-  border-radius:8px;
-  margin-left:6px;
+background:#1712d9;
+padding:4px 10px;
+border-radius:8px;
+margin-left:6px;
 }
 
 /* PANEL KANAN */
 .panel{
-  border:1px solid #14c6d1;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:10px;
+border:1px solid #14c6d1;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
 }
 
 /* BANNER BESAR */
 .big-banner{
-  height:260px;
-  background:#111;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:10px;
-  font-weight:bold;
-  text-align:center;
-  padding:10px;
+height:260px;
+background:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+font-weight:bold;
 }
 </style>
 </head>
@@ -69,18 +242,276 @@ body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
 
 <div class="wrap">
 
-  <div class="top">
-    <h1>LANAYA88</h1>
-    <div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
-  </div>
+<div class="top">
+<h1>LANAYA88</h1>
+<div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
+</div>
+
+<div class="banner-row">
+<div class="banner">IKLAN / BANNER</div>
+<div class="banner">BANNER / BANNER</div>
+</div>
+
+<div class="ticker">
+<span>TIAP HARI UPDATE DATA OTOMATIS, ANGKA BERJALAN PELAN</span>
+</div>
+
+<div class="main">
+
+<!-- KIRI -->
+<div class="left">
+<div class="scroll-box">
+<div class="scroll-inner" id="dataList"></div>
+</div>
+</div>
+
+<!-- KANAN -->
+<div class="right">
+
+<div class="panel">
+<b>RESULT PUTARAN</b><br><br>
+HARI INI<br>
+<b id="tgl"></b><br><br>
+UPDATE<br>
+<b id="jam"></b>
+</div>
+
+<div class="panel">
+<b>BANNER ATAS</b><br><br>
+BANNER 1 : 01<br>
+BANNER 2 : 02
+</div>
+
+<!-- INI UNTUK GIF / VIDEO -->
+<div class="big-banner">
+MASUKKAN GIF / VIDEO DI SINI
+</div>
+
+</div>
+</div>
+</div>
+
+<script>
+const list = [
+  {nama:"MOROCCO QUATRO 03:00 WIB", angka:"5432"},
+  {nama:"MOROCCO QUATRO 00:01 WIB", angka:"5643"},
+  {nama:"MOROCCO QUATRO 21:00 WIB, angka:"5567"},
+  {nama:"MOROCCO QUATRO 18:00 WIB", angka:"7812"},
+  {nama:"BHURMA", angka:"3346"},
+  {nama:"RWANDA LOTTO", angka:"6654"},
+  {nama:"CANADA", angka:"7785"},
+  {nama:"SHANGHAI POOLS 11:00", angka:"1298"},
+  {nama:"SHANGHAI POOLS 15:00", angka:"4421"},
+  {nama:"SHANGHAI POOLS 23:00", angka:"6399"},
+  {nama:"TOTOMACAU 13:00 WIB", angka:"8831"},
+  {nama:"TOTOMACAU 16:00 WIB", angka:"8812"},
+  {nama:"TOTOMACAU 19:00 WIB", angka:"4567"},
+  {nama:"TOTOMACAU 22:00 WIB", angka:"5678"},
+  {nama:"TOTOMACAU 23:00 WIB", angka:"4457"},
+  {nama:"TOTOMACAU 00:00 WIB", angka:"6401"},
+  {nama:"ANKARAPOOLS", angka:"7012"},
+  {nama:"MANCITYPOOLS", angka:"2291"},
+  {nama:"WISCOSIN", angka:"1678"},
+  {nama:"BARCELONA", angka:"4412"}
+  {nama:"JAKARTA POOLS", angka:"7785"},
+  {nama:"OSLO", angka:"1298"},
+  {nama:"TOKYO", angka:"4421"},
+  {nama:"GRAB POOLS", angka:"6399"},
+  {nama:"BATAVIA", angka:"8831"},
+  {nama:"MONGOLIA", angka:"8812"},
+  {nama:"GRAND DRAGON 4D", angka:"4567"},
+  {nama:"EMIRATES DAY", angka:"5678"},
+  {nama:"NINE LOTTO", angka:"4457"},
+  {nama:"GOOD 4D", angka:"6401"},
+  {nama:"MACAU 5D", angka:"7012"},
+  {nama:"DARWIN 4D", angka:"5432"},
+  {nama:"OREGON 13:00", angka:"5643"},
+  {nama:"OREGON 09:00", angka:"5567"},
+  {nama:"OREGON 12:00", angka:"7812"},
+  {nama:"OREGON 16:00", angka:"3346"},
+  {nama:"FLORIDA", angka:"6654"},
+  {nama:"FLORIDA EVENING", angka:"7785"},
+  {nama:"FLORIDA DAY", angka:"1298"},
+  {nama:"ARKANSAS DAY", angka:"4421"},
+  {nama:"ARKANSAS EVENING", angka:"6399"},
+  {nama:"WASHINGTON", angka:"8831"},
+  {nama:"WASHINGTON DC MIDDAY", angka:"8812"},
+  {nama:"WASHINGTON DC EVENING", angka:"4567"},
+  {nama:"MICHIGAN", angka:"5678"},
+  {nama:"MICHIGAN MIDDAY", angka:"4457"},
+  {nama:"MICHIGAN EVENING", angka:"6401"},
+  {nama:"PENNSYLVANIA EVENING", angka:"7012"},
+  {nama:"PENNSYLVANIA DAY", angka:"2291"},
+  {nama:"TEXAS DAY", angka:"1678"},
+  {nama:"TEXAS NIGHT", angka:"4412"}
+  {nama:"TEXAS EVENING", angka:"7785"},
+  {nama:"TEXAS MORNING", angka:"1298"},
+  {nama:"NEWYORK 4D", angka:"4421"},
+  {nama:"NEWYORK MIDDAY", angka:"6399"},
+  {nama:"TENNESSEE MORNING", angka:"8831"},
+  {nama:"TENNESSEE EVENING", angka:"8812"},
+  {nama:"TENNESSEE DAY", angka:"4567"},
+  {nama:"NEW JERSEY MIDDAY", angka:"5678"},
+  {nama:"NEW JERSEY EVENING", angka:"4457"},
+  {nama:"VIRGINIA DAY", angka:"6401"},
+  {nama:"VIRGINIA NIGHT", angka:"7012"},
+  {nama:"INDIANA EVENING", angka:"2291"},
+  {nama:"INDIANA DAY", angka:"1678"},
+  {nama:"ATLANTIC DAY", angka:"4412"}
+  {nama:"BRAZIL", angka:"7785"},
+  {nama:"ATLANTIC NIGHT", angka:"1298"},
+  {nama:"ATLANTIC MORNING", angka:"4421"},
+  {nama:"KENTUCKY EVENING", angka:"6399"},
+  {nama:"KENTUCKY MIDDAY", angka:"8831"},
+  {nama:"CALIFORNIA", angka:"8812"},
+  {nama:"PORTLAND POOLS", angka:"4567"},
+  {nama:"NORTH CAROLINA DAY", angka:"5678"},
+  {nama:"NORTH CAROLINA EVENING", angka:"4457"},
+  {nama:"NORTH CAROLINA", angka:"6401"},
+  {nama:"USA NIGHT", angka:"7012"},
+  {nama:"SANTAFE LOTTERY, angka:"2291"},
+  {nama:"GERMANY PLUS5, angka:"1678"},
+  {nama:"PATTAYA LOTTERY", angka:"8796"}
+  {nama:"BRAZIL", angka:"7785"},
+  {nama:"CHIANGMAI LOTTERY", angka:"1408"},
+  {nama:"WINCHESTER LOTTERY", angka:"4421"},
+  {nama:"MAGNUM CAMBODIA", angka:"4545"},
+  {nama:"ROME LOTTERY", angka:"6565"},
+  {nama:"SEOUL LOTTERY", angka:"0534"},
+  {nama:"HONGKONG LOTTO", angka:"6090"},
+  {nama:"HONGKONGPOOLS", angka:"3598"},
+  {nama:"XIAMEN LOTTERY", angka:"5989"},
+  {nama:"BERLIN POOLS", angka:"6401"},
+  {nama:"HUAHIN 01:00", angka:"4499"},
+  {nama:"BHURMA", angka:"6623"},
+  {nama:"CHELSEA POOLS", angka:"6090"},
+  {nama:"HUAHIN 01:00", angka:"3276"}
+];
+
+const data = document.getElementById('dataList');
+
+function render(){
+  let html="";
+  list.forEach(item=>{
+    html += `<div class='cell'>
+      ${item.nama} <span class='num'>${item.angka}</span>
+    </div>`;
+  });
+
+  html += html; // biar scroll nyambung
+  data.innerHTML = html;
+}
+
+render();
+
+function updateTime(){
+  let now=new Date();
+  document.getElementById('tgl').innerText=
+    now.toLocaleDateString('id-ID',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+  document.getElementById('jam').innerText=
+    now.toLocaleTimeString('id-ID');
+}
+
+setInterval(updateTime,1000);
+updateTime();
+</script>
+
+</body>
+</html>
+-----------------------------------------------------------
+
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LANAYA88</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
+.wrap{max-width:1200px;margin:auto}
+
+/* LINK */
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+.top{background:#d8dce0;color:#000;text-align:center;padding:10px}
+
+.banner-row{
+  display:flex;
+}
+
+.banner-row a{
+  flex:1;
+}
+
+.banner{
+  height:60px;
+  background:#d80b2e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+/* TEXT JALAN */
+.ticker{background:#d80b2e;padding:8px;overflow:hidden;white-space:nowrap}
+.ticker span{display:inline-block;padding-left:100%;animation:marq 15s linear infinite}
+@keyframes marq{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+
+/* LAYOUT */
+.main{display:flex}
+.left{flex:2}
+.right{flex:1;padding:10px}
+
+/* SCROLL */
+.scroll-box{height:420px;overflow-y:auto}
+.scroll-inner{position:static;width:100%}
+
+.cell{border:1px solid #d80b2e;padding:12px;text-align:center}
+.num{background:#0d0631;padding:4px 10px;border-radius:8px;margin-left:6px}
+
+/* PANEL */
+.panel{border:1px solid #14c6d1;padding:12px;margin-bottom:10px;border-radius:10px}
+
+/* BIG BANNER */
+.big-banner{
+  height:260px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<div class="top">
+  <h1>LANAYA88</h1>
+  <div>SITUS RESMI PASARAN TOGEL SELURUH DUNIA</div>
+  <div id="tgl"></div>
+  <div id="jam"></div>
+</div>
 
   <div class="banner-row">
+  <a href="https://linkkamu.com" target="_blank">
     <div class="banner">IKLAN / BANNER</div>
+  </a>
+
+  <a href="https://linkkedua.com" target="_blank">
     <div class="banner">BANNER / BANNER</div>
-  </div>
+  </a>
+</div>
 
   <div class="ticker">
-    <span>TIAP HARI UPDATE DATA OTOMATIS, ANGKA BERJALAN PELAN</span>
+    <span>TIAP HARI UPDATE DATA, ANGKA DI SELURUH  DUNIA</span>
   </div>
 
   <div class="main">
@@ -95,23 +526,18 @@ body{margin:0;font-family:Arial;background:#0d0631;color:#fff}
     <!-- KANAN -->
     <div class="right">
 
-      <div class="panel">
-        <b>RESULT PUTARAN</b><br><br>
-        HARI INI<br>
-        <b id="tgl"></b><br><br>
-        UPDATE<br>
-        <b id="jam"></b>
-      </div>
+  <div class="panel">
+    <b>BANNER ATAS</b><br><br>
 
-      <div class="panel">
-        <b>BANNER ATAS</b><br><br>
-        BANNER 1 : 01<br>
-        BANNER 2 : 02
-      </div>
+  <a href="https://link1.com" target="_blank">BANNER 1 : 01</a><br>
+  <a href="https://link2.com" target="_blank">BANNER 2 : 02</a>
+</div>
 
-      <div class="big-banner">
-        MASUKKAN GIF / VIDEO DI SINI
-      </div>
+  <a href=https://blogger.googleusercontent.com/img/a/AVvXsEjpnt-woDumQxpVY0ylperyxA9Tm2_J1GiSJ82ttHNX45awaBDTQyI79LsmIE1M5pJrn-pi9IIIBwCLRt9B-Q3ZSXcO2-XMYMPW--T7oR_I_pE2TFLbVVzlHBrfmNzcAeR3mJJp1A7Awvyehf0yymdrOgNVM3N2aMwGMgVBrRhSZ08X647s3cmUXo25cp-k" target="_blank">
+    <div class="big-banner">
+     <img src="banner.gif" style="width:100%;height:100%;object-fit:cover;">
+    </div>
+ </a>
 
     </div>
   </div>
@@ -150,7 +576,7 @@ const list = [
   {nama:"NINE LOTTO", angka:"4457"},
   {nama:"GOOD 4D", angka:"6401"},
   {nama:"MACAU 5D", angka:"7012"},
- {nama:"MOROCCO QUATRO 03:00 WIB", angka:"5432"},
+  {nama:"MOROCCO QUATRO 03:00 WIB", angka:"5432"},
   {nama:"MOROCCO QUATRO 00:01 WIB", angka:"5643"},
   {nama:"MOROCCO QUATRO 21:00 WIB", angka:"5567"},
   {nama:"MOROCCO QUATRO 18:00 WIB", angka:"7812"},
@@ -247,24 +673,51 @@ const list = [
 
 const data = document.getElementById('dataList');
 
+// DUPLIKAT OTOMATIS UNTUK SCROLL
+const doubleList = [...list, ...list];
+
 function render(){
   let html = "";
-  list.forEach(item => {
+  doubleList.forEach(item => {
     html += `<div class="cell">
       ${item.nama} <span class="num">${item.angka}</span>
     </div>`;
   });
 
-  html += html; // biar scroll nyambung
   data.innerHTML = html;
 }
 
 render();
 
+// AUTO SCROLL
+let scrollPos = 0;
+
+setInterval(() => {
+  const box = document.querySelector('.scroll-box');
+  if (!box) return;
+
+  scrollPos += 1;
+
+  if(scrollPos >= box.scrollHeight / 2){
+    scrollPos = 0;
+  }
+
+  box.scrollTop = scrollPos;
+}, 30);
+
+
+// JAM & TANGGAL
 function updateTime(){
   let now = new Date();
+
   document.getElementById('tgl').innerText =
-    now.toLocaleDateString('id-ID',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+    now.toLocaleDateString('id-ID', {
+      weekday:'long',
+      day:'2-digit',
+      month:'long',
+      year:'numeric'
+    });
+
   document.getElementById('jam').innerText =
     now.toLocaleTimeString('id-ID');
 }
@@ -275,3 +728,11 @@ updateTime();
 
 </body>
 </html>
+
+
+
+
+
+
+
+
